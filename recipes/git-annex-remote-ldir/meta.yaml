@@ -1,0 +1,36 @@
+{% set name = "git-annex-remote-ldir" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/notestaff/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: fce48dd106b405ab8aaebba171fb5a7815a976ce4992b6f86b003666701f1816
+
+build:
+  noarch: generic
+  number: 14
+
+# requirements:
+#   host:
+#     - python
+#   run:
+#     - python
+
+test:
+  commands:
+    - "{{ name }} < /dev/null"
+
+about:
+  home: https://github.com/notestaff/git-annex-remote-ldir
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: git annex external special remote for local dirs
+  dev_url: https://github.com/notestaff/git-annex-remote-ldir
+
+extra:
+  recipe-maintainers:
+    - notestaff
